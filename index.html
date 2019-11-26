@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .h1 {
+            background: yellow
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function highlights(strings, ...values) {
+        let str = "";
+        strings.forEach((string, i) => {
+            str += `${string} <span contenteditable class="h1">${values[i] || ""}</span>`;
+        });
+        return str;
+    }
+     const name = "snickers";
+     const age = 100;
+     const sentence = highlights`My dog's name is ${name} and he is ${age} years old`;
+    
+     document.body.innerHTML= sentence
+     console.log(sentence)
+    
+    
+    </script>
+        
+        
+</body>
+</html>
